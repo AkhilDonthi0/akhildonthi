@@ -45,7 +45,7 @@ function App() {
       <Section title="Technical Skills">
         <ul className="list-disc list-inside">
           <li><strong>Programming Languages:</strong> Java, SQL, PL/SQL, Python</li>
-          <li><strong>Frameworks & Technologies:</strong> Spring Boot, Hibernate, RESTful APIs, Maven, Kafka, JUnit, Mockito</li>
+          <li><strong>Frameworks & Technologies:</strong> Spring Boot, Hibernate, RESTful APIs, Maven, Kafka, JUnit, Mockito </li>
           <li><strong>Databases:</strong> SQL, MySQL, NoSQL, Couchbase</li>
           <li><strong>Tools:</strong> Postman, Git, Docker, Figma, CI/CD, Jenkins, Cisco Networking</li>
           <li><strong>Development & Testing:</strong> Eclipse, STS, Visual Studio Code, Tomcat, JUnit, Mockito, Maven</li>
