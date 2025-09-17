@@ -1,0 +1,1 @@
+/*! tailwindcss v4.1.11 | MIT License | https://tailwindcss.com */.mx-auto{margin-inline:auto}.list-inside{list-style-position:inside}.list-disc{list-style-type:disc}.text-center{text-align:center}.italic{font-style:italic}.animate-fade-in{animation:.8s ease-in-out fadeIn}@keyframes fadeIn{0%{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
