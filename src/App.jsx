@@ -28,7 +28,7 @@ function App() {
       },
       {
         school: "Vaagdevi Engineering College",
-        degree: "BTech in Computer Science"
+        degree: "BTech in Computer Science",
       },
     ],
     experience: [
@@ -121,6 +121,7 @@ function App() {
         {resumeData.education.map((edu, i) => (
           <div key={i} className="mb-4">
             <h3 className="font-semibold">{edu.school}</h3>
+               <p>{edu.degree}  {edu.period}</p>
             {edu.gpa && <p>GPA: {edu.gpa}</p>}
             {edu.coursework && <p>Coursework: {edu.coursework.join(", ")}</p>}
             {edu.projectHighlight && <p className="italic">{edu.projectHighlight}</p>}
