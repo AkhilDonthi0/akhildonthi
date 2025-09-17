@@ -1,101 +1,185 @@
-import { useState } from 'react';
-import './App.css';
-
-function Section({ title, children }) {
-  return (
-    <div className="mb-6">
-      <h2 className="text-xl font-bold text-indigo-600 mb-2 border-b pb-1">{title}</h2>
-      <div className="pl-2 text-gray-800 space-y-1">{children}</div>
-    </div>
-  );
-}
+import React from "react";
 
 function App() {
-  const [showMore, setShowMore] = useState(false);
+  const resumeData = {
+    name: "Akhil Donthi",
+    location: "Montgomery, Alabama, United States",
+    phone: "+1 3344406014",
+    email: "donthiakhil0@gmail.com",
+    links: {
+      linkedin: "https://linkedin.com/in/akhil-d-672a32151",
+      github: "https://github.com/AkhilDonthi0",
+      portfolio: "https://akhildonthi0.github.io/akhildonthi",
+    },
+    summary:
+      "Highly skilled Backend Developer with expertise in building robust backend systems, RESTful APIs, and enterprise-grade applications. Proficient in Java, Spring Boot, and modern software engineering practices, with a track record of delivering scalable, secure, and high-performance solutions. Experienced in designing microservices architectures, optimizing database interactions, and automating CI/CD pipelines. Recognized for strong problem-solving, debugging, and collaboration skills.",
+    education: [
+      {
+        school: "Auburn University at Montgomery",
+        degree: "Masters in Management Information Systems",
+        gpa: "3.60",
+        period: "May 2023 - Dec 2024",
+        coursework: [
+          "System Design and Architecture",
+          "Information Security and Assurance",
+          "Enterprise Resource Planning (ERP)",
+          "Data Analytics and Visualization",
+          "Leading Innovation and Technology Management",
+        ],
+        projectHighlight:
+          "Secure Route – UI/UX in Figma, DB schema, technical design to enhance road safety.",
+      },
+      {
+        school: "Vaagdevi Engineering College",
+        degree: "BTech in Computer Science",
+        gpa: "N/A",
+        period: "Aug 2016 - Sep 2020",
+      },
+    ],
+    experience: [
+      {
+        title: "Backend Developer",
+        company: "Virtusa Consulting Services Private Limited",
+        location: "Chennai",
+        period: "Jan 2019 - Mar 2023",
+        highlights: [
+          "Architected high-performance RESTful APIs with Java & Spring Boot.",
+          "Engineered unit & integration tests (JUnit, Mockito) with >90% coverage.",
+          "Optimized Couchbase queries, improving performance by 50%.",
+          "Led debugging & root cause analysis, reducing downtime by 40%.",
+          "Mentored junior developers & drove agile practices.",
+          "Integrated Kafka for real-time, event-driven architectures.",
+        ],
+      },
+    ],
+    projects: [
+      {
+        name: "Space Inventory Management (SIM)",
+        client: "British Telecommunications",
+        period: "2019 - 2023",
+        details: [
+          "Developed classification-based REST APIs for SIM v2.",
+          "Optimized SQL queries & indexing for millions of records.",
+          "Implemented JUnit test coverage for continuous integration.",
+          "Delivered features like RBAC, import/export, notifications.",
+        ],
+        technologies: ["Spring Boot", "REST APIs", "Couchbase", "Kafka", "Docker"],
+      },
+      {
+        name: "Secure Route",
+        type: "Masters Project",
+        period: "Jun 2023 - Aug 2023",
+        details: [
+          "Designed UI/UX in Figma to identify accident-prone areas.",
+          "Created DB schema & technical design documentation.",
+          "Outlined marketing strategy & revenue model.",
+        ],
+        technologies: ["Figma", "System Design", "DB Schema"],
+      },
+      {
+        name: "Online Quiz App",
+        type: "Training Project",
+        period: "2019",
+        details: [
+          "Built Spring Boot backend for quiz management.",
+          "Developed schema & backend services for publishing quizzes.",
+        ],
+        technologies: ["Spring Boot", "Hibernate", "MySQL"],
+      },
+    ],
+    skills: {
+      languages: ["Java", "SQL", "PL/SQL", "Python", "NoSQL", "JavaScript", "C", "C++"],
+      frameworks: ["Spring Boot", "Hibernate", "Maven", "Kafka", "JUnit", "Mockito"],
+      databases: ["MySQL", "Couchbase", "Oracle"],
+      tools: ["Postman", "Git", "Docker", "Figma", "Jenkins", "Cisco Networking"],
+      development: ["Microservices", "System Design", "Debugging", "REST APIs", "CI/CD"],
+    },
+    certifications: [
+      "Oracle Certified Associate, Java SE 8 Programmer",
+      "Cisco Certified Networking Professional (CCNP)",
+      "DIAT Certified Information Assurance Professional",
+      "DevOps Beginners to Advanced",
+      "DevOps CI/CD",
+    ],
+  };
 
   return (
-    <div className="p-6 font-sans max-w-4xl mx-auto animate-fade-in">
-      <header className="text-center mb-10">
-        <h1 className="text-4xl font-bold text-indigo-700">Akhil Donthi</h1>
-        <p className="text-lg mt-2 text-gray-700">Software Engineer | Java | Spring Boot | REST APIs</p>
+    <div className="p-6 max-w-5xl mx-auto font-sans">
+      <header className="text-center mb-8">
+        <h1 className="text-4xl font-bold">{resumeData.name}</h1>
+        <p className="text-gray-700">
+          {resumeData.location} | {resumeData.phone} | {resumeData.email}
+        </p>
+        <p className="text-blue-600">
+          <a href={resumeData.links.linkedin}>LinkedIn</a> |{" "}
+          <a href={resumeData.links.github}>GitHub</a> |{" "}
+          <a href={resumeData.links.portfolio}>Portfolio</a>
+        </p>
       </header>
 
-      <Section title="Summary">
-        <p>
-          Results-driven Software Engineer with expertise in Java, Spring Boot, and RESTful APIs. Proven ability to develop scalable, high-performance microservices solutions and deliver robust, mission-critical applications. Adept at leveraging agile methodologies and collaborating with cross-functional teams to drive efficiency and seamless integration of backend systems.
-        </p>
-      </Section>
+      <section className="mb-8">
+        <h2 className="text-xl font-bold mb-2">Summary</h2>
+        <p>{resumeData.summary}</p>
+      </section>
 
-      <Section title="Work Experience">
-        <p><strong>Virtusa Consulting Services Private Limited</strong><br />Backend Developer (Apr 2021 - Mar 2023)</p>
-        <ul className="list-disc list-inside mt-2 space-y-1">
-          <li>Engineered and developed **RESTful APIs** using **Java** and **Spring Boot** to integrate microservices and ensure scalable, high-performance applications.</li>
-          <li>Crafted and executed comprehensive **JUnit** tests to validate API reliability, supporting agile and **CI/CD**-driven development practices.</li>
-          <li>Resolved complex bugs through targeted debugging and problem-solving, significantly enhancing application performance and system stability.</li>
-          <li>Optimized **Couchbase** database queries to boost data retrieval efficiency, reducing response times and improving overall system functionality.</li>
-          <li>Collaborated in agile development cycles by refining data classifications and engaging in thorough code reviews to elevate engineering standards.</li>
-        </ul>
-      </Section>
+      <section className="mb-8">
+        <h2 className="text-xl font-bold mb-2">Education</h2>
+        {resumeData.education.map((edu, i) => (
+          <div key={i} className="mb-4">
+            <h3 className="font-semibold">{edu.school}</h3>
+            <p>{edu.degree} • {edu.period}</p>
+            {edu.gpa && <p>GPA: {edu.gpa}</p>}
+            {edu.coursework && <p>Coursework: {edu.coursework.join(", ")}</p>}
+            {edu.projectHighlight && <p className="italic">{edu.projectHighlight}</p>}
+          </div>
+        ))}
+      </section>
 
-      <Section title="Education">
-        <p><strong>Auburn University at Montgomery</strong><br />Masters in Management Information Systems (May 2023 – Dec 2024)</p>
-        <p><strong>Vaagdevi Engineering College</strong><br />BTech in Computer Science (Aug 2016 - Sep 2020)</p>
-      </Section>
+      <section className="mb-8">
+        <h2 className="text-xl font-bold mb-2">Experience</h2>
+        {resumeData.experience.map((job, i) => (
+          <div key={i} className="mb-4">
+            <h3 className="font-semibold">{job.title} - {job.company}</h3>
+            <p>{job.location} • {job.period}</p>
+            <ul className="list-disc list-inside">
+              {job.highlights.map((h, idx) => <li key={idx}>{h}</li>)}
+            </ul>
+          </div>
+        ))}
+      </section>
 
-      <Section title="Technical Skills">
+      <section className="mb-8">
+        <h2 className="text-xl font-bold mb-2">Projects</h2>
+        {resumeData.projects.map((proj, i) => (
+          <div key={i} className="mb-4">
+            <h3 className="font-semibold">{proj.name}</h3>
+            <p>{proj.type || proj.client} • {proj.period}</p>
+            <ul className="list-disc list-inside">
+              {proj.details.map((d, idx) => <li key={idx}>{d}</li>)}
+            </ul>
+            <p className="text-sm text-gray-600">Tech: {proj.technologies.join(", ")}</p>
+          </div>
+        ))}
+      </section>
+
+      <section className="mb-8">
+        <h2 className="text-xl font-bold mb-2">Skills</h2>
+        <p><strong>Languages:</strong> {resumeData.skills.languages.join(", ")}</p>
+        <p><strong>Frameworks:</strong> {resumeData.skills.frameworks.join(", ")}</p>
+        <p><strong>Databases:</strong> {resumeData.skills.databases.join(", ")}</p>
+        <p><strong>Tools:</strong> {resumeData.skills.tools.join(", ")}</p>
+        <p><strong>Development:</strong> {resumeData.skills.development.join(", ")}</p>
+      </section>
+
+      <section className="mb-8">
+        <h2 className="text-xl font-bold mb-2">Certifications</h2>
         <ul className="list-disc list-inside">
-          <li><strong>Programming Languages:</strong> Java, SQL, PL/SQL, Python</li>
-          <li><strong>Frameworks & Technologies:</strong> Spring Boot, Hibernate, RESTful APIs, Maven, Kafka, JUnit, Mockito </li>
-          <li><strong>Databases:</strong> SQL, MySQL, NoSQL, Couchbase</li>
-          <li><strong>Tools:</strong> Postman, Git, Docker, Figma, CI/CD, Jenkins, Cisco Networking</li>
-          <li><strong>Development & Testing:</strong> Eclipse, STS, Visual Studio Code, Tomcat, JUnit, Mockito, Maven</li>
-          <li><strong>Other:</strong> GNS3, Packet Tracer</li>
-          <li><strong>Development Practices:</strong> Object-oriented Programming, Backend Development, Microservices, Software Development, Agile Methodologies</li>
+          {resumeData.certifications.map((cert, i) => <li key={i}>{cert}</li>)}
         </ul>
-      </Section>
+      </section>
 
-      <Section title="Projects">
-        <ul className="list-disc list-inside space-y-3">
-          <li>
-            <p className="font-semibold">Space Inventory Management (SIM)</p>
-            <p className="text-sm text-gray-600">British Telecommunications | Dec 2021 - Mar 2023</p>
-            <p className="text-sm">As an Associate Developer, I helped build the upgraded SIM application. My work focused on developing and refining classifications, creating and testing APIs for record management (create, update, delete), and optimizing database queries for improved efficiency. I also wrote **JUnit** tests and debugged the codebase to ensure system stability. This web application manages legacy records for British Telecommunications, including features for file versioning, role-based access control, and efficient searching.</p>
-          </li>
-          <li>
-            <p className="font-semibold">Online Quiz</p>
-            <p className="text-sm text-gray-600">Jun 2021 - Aug 2021</p>
-            <p className="text-sm">Developed a simple quiz application using **Spring Boot**, **Hibernate**, and **MySQL**. My responsibilities as Team Leader included designing the database schema and building the backend services to handle quiz creation, participation, and score tracking. This project was a learning initiative to practice full-stack development concepts.</p>
-          </li>
-          <li>
-            <p className="font-semibold">Secure Route</p>
-            <p className="text-sm text-gray-600">Jun 2023 - Aug 2023</p>
-            <p className="text-sm">Designed the UI/UX using **Figma** and created a comprehensive database schema for an application aimed at enhancing road safety. The project's design includes features to identify accident-prone areas, provide real-time hazard alerts, and promote community involvement to improve road conditions. This was a technical design project for my master's program.</p>
-          </li>
-          <li>
-            <p className="font-semibold">Efficient Network Design by Using IP Subnetting</p>
-            <p className="text-sm text-gray-600">Sep 2019 - Jan 2020</p>
-            <p className="text-sm">As Team Leader, I designed and configured a virtual network using **Cisco Packet Tracer**, implementing **IP Subnetting** and routing protocols. The project demonstrated the use of Variable Length Subnet Masking (VLSM) to create multiple manageable networks from a single large IP network, ensuring efficient use of IP addresses.</p>
-          </li>
-        </ul>
-      </Section>
-
-      <Section title="Certifications">
-        <ul className="list-disc list-inside">
-          <li>Oracle Certified Associate, Java SE 8 Programmer</li>
-          <li>Cisco Certified Networking Professional</li>
-          <li>DIAT Certified Information Assurance Professional</li>
-        </ul>
-      </Section>
-
-      <Section title="Contact">
-        <p>Email: donthiakhil0@gmail.com</p>
-        <p>Phone: +1 3344406014</p>
-        <p>LinkedIn: <a href="https://linkedin.com/in/akhil-d-672a32151" target="_blank" className="text-blue-600 underline">linkedin.com/in/akhil-d-672a32151</a></p>
-        <p>GitHub: <a href="https://github.com/your-github-profile" target="_blank" className="text-blue-600 underline">github.com/your-github-profile</a></p>
-      </Section>
-
-      <footer className="text-center text-sm text-gray-400 mt-10">
-        <p>© 2025 Akhil Donthi</p>
+      <footer className="text-center text-sm text-gray-500 mt-10">
+        © 2025 {resumeData.name}
       </footer>
     </div>
   );
