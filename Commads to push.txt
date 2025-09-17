@@ -1,0 +1,9 @@
+To upload into git server 
+Step 1) push the code to git 
+Step 2) npm install gh-pages --save-dev~
+Step 3) npm run deploy
+
+To view locally in VSCode
+Step 1 path to portfolio
+Step 2 npm start 
+ 

@@ -8,8 +8,7 @@ function App() {
     email: "donthiakhil0@gmail.com",
     links: {
       linkedin: "https://linkedin.com/in/akhil-d-672a32151",
-      github: "https://github.com/AkhilDonthi0",
-      portfolio: "https://akhildonthi0.github.io/akhildonthi",
+      github: "https://github.com/AkhilDonthi0"      
     },
     summary:
       "Highly skilled Backend Developer with expertise in building robust backend systems, RESTful APIs, and enterprise-grade applications. Proficient in Java, Spring Boot, and modern software engineering practices, with a track record of delivering scalable, secure, and high-performance solutions. Experienced in designing microservices architectures, optimizing database interactions, and automating CI/CD pipelines. Recognized for strong problem-solving, debugging, and collaboration skills.",
@@ -17,8 +16,6 @@ function App() {
       {
         school: "Auburn University at Montgomery",
         degree: "Masters in Management Information Systems",
-        gpa: "3.60",
-        period: "May 2023 - Dec 2024",
         coursework: [
           "System Design and Architecture",
           "Information Security and Assurance",
@@ -31,9 +28,7 @@ function App() {
       },
       {
         school: "Vaagdevi Engineering College",
-        degree: "BTech in Computer Science",
-        gpa: "N/A",
-        period: "Aug 2016 - Sep 2020",
+        degree: "BTech in Computer Science"
       },
     ],
     experience: [
@@ -111,9 +106,8 @@ function App() {
           {resumeData.location} | {resumeData.phone} | {resumeData.email}
         </p>
         <p className="text-blue-600">
-          <a href={resumeData.links.linkedin}>LinkedIn</a> |{" "}
-          <a href={resumeData.links.github}>GitHub</a> |{" "}
-          <a href={resumeData.links.portfolio}>Portfolio</a>
+          <a href={resumeData.links.linkedin}>LinkedIn</a> {" "}
+          <a href={resumeData.links.github}>GitHub</a> {" "}
         </p>
       </header>
 
@@ -127,7 +121,6 @@ function App() {
         {resumeData.education.map((edu, i) => (
           <div key={i} className="mb-4">
             <h3 className="font-semibold">{edu.school}</h3>
-            <p>{edu.degree} • {edu.period}</p>
             {edu.gpa && <p>GPA: {edu.gpa}</p>}
             {edu.coursework && <p>Coursework: {edu.coursework.join(", ")}</p>}
             {edu.projectHighlight && <p className="italic">{edu.projectHighlight}</p>}
@@ -140,7 +133,7 @@ function App() {
         {resumeData.experience.map((job, i) => (
           <div key={i} className="mb-4">
             <h3 className="font-semibold">{job.title} - {job.company}</h3>
-            <p>{job.location} • {job.period}</p>
+            <p>{job.location}  {job.period}</p>
             <ul className="list-disc list-inside">
               {job.highlights.map((h, idx) => <li key={idx}>{h}</li>)}
             </ul>
@@ -153,7 +146,7 @@ function App() {
         {resumeData.projects.map((proj, i) => (
           <div key={i} className="mb-4">
             <h3 className="font-semibold">{proj.name}</h3>
-            <p>{proj.type || proj.client} • {proj.period}</p>
+            <p>{proj.type || proj.client}  {proj.period}</p>
             <ul className="list-disc list-inside">
               {proj.details.map((d, idx) => <li key={idx}>{d}</li>)}
             </ul>
