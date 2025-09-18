@@ -11,7 +11,7 @@ function App() {
       github: "https://github.com/AkhilDonthi0"      
     },
     summary:
-      "Highly skilled Backend Developer with expertise in building robust backend systems, RESTful APIs, and enterprise-grade applications. Proficient in Java, Spring Boot, and modern software engineering practices, with a track record of delivering scalable, secure, and high-performance solutions. Experienced in designing microservices architectures, optimizing database interactions, and automating CI/CD pipelines. Recognized for strong problem-solving, debugging, and collaboration skills.",
+      "Highly skilled Backend Developer with expertise in building robust backend systems, RESTful APIs, and enterprise-grade applications. Proficient in Java, Spring Boot, and modern software engineering practices, with a track record of delivering scalable, secure, and high-performance solutions. Experienced in designing microservices architectures, optimizing database interactions, and automating CI/CD pipelines to accelerate deployments. Recognized for strong problem-solving, debugging, and collaboration skills, consistently driving projects from concept to production with a focus on reliability, efficiency, and user impact.",
     education: [
       {
         school: "Auburn University at Montgomery",
@@ -24,7 +24,7 @@ function App() {
           "Leading Innovation and Technology Management",
         ],
         projectHighlight:
-          "Secure Route – UI/UX in Figma, DB schema, technical design to enhance road safety.",
+          "Applied theoretical knowledge in practical projects, including Secure Route, where I designed the complete UI/UX frontend using Figma, developed database schema, and conceptualized technical solutions to enhance road safety through innovative application design.",
       },
       {
         school: "Vaagdevi Engineering College",
@@ -36,7 +36,6 @@ function App() {
         title: "Backend Developer",
         company: "Virtusa Consulting Services Private Limited",
         location: "Chennai",
-        period: "Jan 2019 - Mar 2023",
         highlights: [
           "Architected high-performance RESTful APIs with Java & Spring Boot.",
           "Engineered unit & integration tests (JUnit, Mockito) with >90% coverage.",
@@ -51,7 +50,6 @@ function App() {
       {
         name: "Space Inventory Management (SIM)",
         client: "British Telecommunications",
-        period: "2019 - 2023",
         details: [
           "Developed classification-based REST APIs for SIM v2.",
           "Optimized SQL queries & indexing for millions of records.",
@@ -63,7 +61,6 @@ function App() {
       {
         name: "Secure Route",
         type: "Masters Project",
-        period: "Jun 2023 - Aug 2023",
         details: [
           "Designed UI/UX in Figma to identify accident-prone areas.",
           "Created DB schema & technical design documentation.",
@@ -74,7 +71,6 @@ function App() {
       {
         name: "Online Quiz App",
         type: "Training Project",
-        period: "2019",
         details: [
           "Built Spring Boot backend for quiz management.",
           "Developed schema & backend services for publishing quizzes.",
